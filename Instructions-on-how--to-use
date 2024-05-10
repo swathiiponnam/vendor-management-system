@@ -1,0 +1,61 @@
+1. CORE FEATURES:
+     I. VENDOR PROFILE MANAGEMENT:
+            It contains vendor information including name,contact details,address and a unique vendor code
+    II. PURCHASE ORDER TRACKING:
+            It is for tracking purchase orders including PO number,vendor reference,order date,items,quantity,status
+   III. VENDOR PERFORMANCE EVALUATION:
+            It contains vendor performance metrics.
+
+2. HOW TO SET UP AND INSTALLATION COMMANDS:
+     1. Inorder to work on Django, we need to go to virtual environment:
+         py -m venv environemnt_name
+         cd environemnt_name\scripts\activate
+     2. Install Django:
+         py -m pip install django
+     3. To create a Project and App:
+         django-admin startproject project_name .
+         django-admin startapp app_name
+     4. To run the server:
+         py manage.py runserver
+     5. To convert python code to sql and send sql query:
+        py manage.py makemigrations
+        py manage.py migrate
+     6. To to use Django ORM for database interactions:
+        To write querie we need to go to shell:    py manage.py shell
+        To insert the data:  modelname.objects.create(colname1=value1,columnname2=value2,.....)
+     7. API End points:
+
+       1. http://127.0.0.1:8000/admin/
+               this is for admin superuser login
+
+       2. http://127.0.0.1:8000/api/vendors/
+                 a)  POST/http://127.0.0.1:8000/api/vendors/  : this is for creating a new vendors profile
+                 b)  GET/http://127.0.0.1:8000/api/vendors/   : this is for reading/listing of all records
+
+       3. http://127.0.0.1:8000/api/vendors/<pk>/
+                 a)  GET/http://127.0.0.1:8000/api/vendors/<pk>/    : to get/read/retrieve a specific vendor details
+                 b)  PUT/http://127.0.0.1:8000/api/vendors/<pk>/    : to update a vendor's details
+                 c)  DELETE/http://127.0.0.1:8000/api/vendors/<pk>/  : To delete a vendor
+
+      4. http://127.0.0.1:8000/api/purchase_orders/
+                 a)  POST/http://127.0.0.1:8000/api/purchase_orders/    : To create a purchase order
+                 b)  GET/http://127.0.0.1:8000/api/purchase_orders/     : To list/read/retrieve all purchase orders with an option to filter by vendor
+      
+      5. http://127.0.0.1:8000/api/purchase_orders/<pk>/
+                a)  GET/http://127.0.0.1:8000/api/purchase_orders/<pk>/    : To read/retireve a specific purchase order
+                b)  PUT/http://127.0.0.1:8000/api/purchase_orders/<pk>/    : To update a purchase order
+                c)  DELETE/http://127.0.0.1:8000/api/purchase_orders/<pk>/ : To delete a purchase order
+
+      6. http://127.0.0.1:8000/api/vendors/<pk>/performance/
+                a) GET/http://127.0.0.1:8000/api/vendors/<pk>/performance/   : To get /retrieve all vendor performance details
+
+
+
+
+
+
+
+
+
+
+
